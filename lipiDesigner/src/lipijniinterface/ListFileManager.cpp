@@ -117,7 +117,7 @@ void ListFileManager::SetDatabasePath(string& pPath)
 	m_sMapFileName = pPath;
 	m_sunicodeMapFileName = pPath;
 	int last_end = m_sMapFileName.find_last_of(SEPARATOR);
-	int len = m_sMapFileName.length() - last_end;
+	// unused variable // int len = m_sMapFileName.length() - last_end;
 	m_sMapFileName = pPath.substr(0, last_end);
 	m_sMapFileName.append(SEPARATOR);
 	m_sMapFileName.append(MAP_FILE_NAME);

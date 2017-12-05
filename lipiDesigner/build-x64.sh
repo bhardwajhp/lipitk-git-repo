@@ -58,11 +58,11 @@ while [ "$1" ]; do
 		sets=yes
 		;;
 	-h|--help) 
-		echo "$usage"
+		printf "$usage"
 		exit 0
 		;;
 	*)
-		echo "\nERROR: Unrecognized option $1"
+		printf "\nERROR: Unrecognized option $1"
 		exit 1
 	esac
 	shift
@@ -70,18 +70,18 @@ done
 
 # default mode is usage
 if [ ! "$build" = yes ] && [ ! "$clean" = yes ] && [ ! "$sets" = yes ]; then
-	echo "$usage"
+	printf "$usage"
 	exit 0	
 fi
 
 # validity check
 if [ "$build" = yes ] && [ "$clean" = yes ]; then
-	echo "\nERROR: -b and -c flags cannot be used together.\n"
+	printf "\nERROR: -b and -c flags cannot be used together.\n"
 	exit 1
 fi
 
 if [ "$sets" = yes ] && [ "$clean" = yes ]; then
-	echo "\nERROR: -c and -s flags cannot be used together.\n"
+	printf "\nERROR: -c and -s flags cannot be used together.\n"
 	exit 1
 fi
 
@@ -93,7 +93,7 @@ if [ "$build" = yes ]; then
 
 	if [ $os != "Ubuntu" ]
 	then
-		echo "\nERROR: lipiDesigner can be built only on Ubuntu Linux.\n"
+		printf "\nERROR: lipiDesigner can be built only on Ubuntu Linux.\n"
 		exit 1
 	fi
 
@@ -122,7 +122,7 @@ if [ "$build" = yes ]; then
 
 	if [ $flag -eq 1 ]
 	then
-		echo "\nERROR: Required library missing from /lib & /usr/lib - $SYS_LIB $SYS_USR_LIB $SYS_EXE or the executable - $SYS_EXE.\n\n"
+		printf "\nERROR: Required library missing from /lib & /usr/lib - $SYS_LIB $SYS_USR_LIB $SYS_EXE or the executable - $SYS_EXE.\n\n"
 		exit 1
 	fi
 
@@ -137,21 +137,21 @@ if [ "$build" = yes ]; then
 
 	if [ $lflag -eq 1 ]
 	then
-		echo "\nERROR: lipi-core-toolkit library missing from $LIPI_ROOT/src/lib, please build it first.\n"
+		printf "\nERROR: lipi-core-toolkit library missing from $LIPI_ROOT/src/lib, please build it first.\n"
 		exit 1
 	fi
 
 	ls $JAVA_DIR/include 1>/dev/null 2>&1
 	if [ $? -ne 0 ]
 	then
-		echo "\nERROR: openjdk-6-jdk package not installed.\n"
+		printf "\nERROR: openjdk-6-jdk package not installed.\n"
 		exit 1
 	fi
 
 	find /usr/bin/perl -print | grep Archive | grep -w $ZIP 1>/dev/null 2>&1
 	if [ $? -ne 0 ]
 	then
-		echo "\nWARNING: Archive::Zip perl module under /usr/share/perl not installed. The package functionality in lipiDesigner may not work."
+		printf "\nWARNING: Archive::Zip perl module under /usr/share/perl not installed. The package functionality in lipiDesigner may not work."
 	fi
 
 	# JAVA_HOME for LipiDesigner build
@@ -207,7 +207,7 @@ if [ "$sets" = yes ]; then
 
 	export LIPI_ROOT=$LIPITK_DIR
 	printf "OK\n\n"
-	echo "The environment is set to run lipiDesigner. Please type <exit> once done with this environment.\n"
+	printf "The environment is set to run lipiDesigner. Please type <exit> once done with this environment.\n"
 	/bin/bash
 	exit 0
 fi

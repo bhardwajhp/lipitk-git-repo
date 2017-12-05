@@ -287,7 +287,7 @@ JNIEXPORT void JNICALL Java_LIPIUIController_DeleteStrokeJNI
 			const char* strSampleaction = env->GetStringUTFChars(str_sampleclassaction,0);
 			const char* strClassid = env->GetStringUTFChars(str_ClassID,0);
 			const string strfile_Path = env->GetStringUTFChars(file_Path,0);
-			int classid = atoi(strClassid);
+			// unuser variable // int classid = atoi(strClassid);
 			string strFPath;
 			string classidStr;
 
