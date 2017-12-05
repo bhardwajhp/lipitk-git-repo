@@ -11,7 +11,7 @@ SYS_EXE=/usr/bin/g++
 flag=0
 
 # lipitk directory
-LIPITK_CORE=`pwd`
+LIPITK_CORE=$(pwd)
 LIPITK_CORE_SRC=/src
 LIPITK_DIR=${LIPITK_CORE%$LIPITK_CORE_SRC}
 
@@ -45,11 +45,11 @@ while [ "$1" ]; do
 		sets=yes
 		;;
 	-h|--help) 
-		echo "$usage"
+		printf "$usage"
 		exit 0
 		;;
 	*)
-		echo "\nERROR: Unrecognized option $1\n"
+		printf "\nERROR: Unrecognized option $1\n"
 		exit 1
 	esac
 	shift
@@ -57,18 +57,18 @@ done
 
 # default mode is usage
 if [ ! "$build" = yes ] && [ ! "$clean" = yes ] && [ ! "$sets" = yes ]; then
-	echo "$usage"
+	printf "$usage"
 	exit 0	
 fi
 
 # validity check
 if [ "$build" = yes ] && [ "$clean" = yes ]; then
-	echo "\nERROR: -b and -c flags cannot be used together\n"
+	printf "\nERROR: -b and -c flags cannot be used together\n"
 	exit 1
 fi
 
 if [ "$sets" = yes ] && [ "$clean" = yes ]; then
-	echo "\nERROR: -c and -s flags cannot be used together\n"
+	printf "\nERROR: -c and -s flags cannot be used together\n"
 	exit 1
 fi
 
@@ -79,7 +79,7 @@ if [ "$build" = yes ]; then
 
 	if [ $os != "Ubuntu" ]
 	then
-		echo "\nERROR: lipi-core-toolkit can be built only on Ubuntu Linux\n"
+		printf "\nERROR: lipi-core-toolkit can be built only on Ubuntu Linux\n"
 		exit 1
 	fi
 
@@ -108,7 +108,7 @@ if [ "$build" = yes ]; then
 
 	if [ $flag -eq 1 ]
 	then
-		echo "\nERROR: Required library missing from /lib & /usr/lib - $SYS_LIB $SYS_USR_LIB or the executable - $SYS_EXE\n"
+		printf "\nERROR: Required library missing from /lib & /usr/lib - $SYS_LIB $SYS_USR_LIB or the executable - $SYS_EXE\n"
 		exit 1
 	fi
 
@@ -140,7 +140,7 @@ if [ "$sets" = yes ]; then
 
 	export LIPI_ROOT=$LIPITK_DIR
 	printf "OK\n\n"
-	echo "The environment is set to run lipi-core-toolkit executables. Please type <exit> once done with this environment.\n"
+	printf "The environment is set to run lipi-core-toolkit executables. Please type <exit> once done with this environment.\n"
 	/bin/bash
 	exit 0
 fi
