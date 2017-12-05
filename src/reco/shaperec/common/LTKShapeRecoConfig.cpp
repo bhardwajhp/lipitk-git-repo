@@ -118,10 +118,10 @@ LTKShapeRecoConfig::LTKShapeRecoConfig(const  string& lipiRoot, const string& sh
 	LOG( LTKLogger::LTK_LOGLEVEL_DEBUG) <<  
         "m_numShapes = " << m_numShapes  << endl;
 
-	int errorCode;
+	//int errorCode;
 	if(m_numShapes <= 0)
 	{
-		errorCode = EINVALID_NUM_OF_SHAPES;
+		int errorCode = EINVALID_NUM_OF_SHAPES;
 
 		LOG( LTKLogger::LTK_LOGLEVEL_ERR) << 
             "Invalid value for number of shapes :" << m_numShapes << endl;

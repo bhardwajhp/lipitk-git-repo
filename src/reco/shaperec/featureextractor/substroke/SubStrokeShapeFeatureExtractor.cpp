@@ -386,7 +386,7 @@ int SubStrokeShapeFeatureExtractor::extractSubStrokesFromInk(const LTKTraceGroup
 
 	int errorCode = -1;              
 
-	int dimension = 0;				// stores the number of points in each trace of the inTraceGroup
+	//int dimension = 0;				// stores the number of points in each trace of the inTraceGroup
 	
 	int landMarkPoint = 0;				// first point of each sub-stroke
 
@@ -410,6 +410,7 @@ int SubStrokeShapeFeatureExtractor::extractSubStrokesFromInk(const LTKTraceGroup
 	// Segmenting inTraceGroup into substrokes
 	for (; traceIter != traceEnd ; ++traceIter)
 	{
+		int dimension = 0;                              // stores the number of points in each trace of the inTraceGroup	
 		floatVector tempxVec, tempyVec;
 
 		//compute all the slope values from points on the trace

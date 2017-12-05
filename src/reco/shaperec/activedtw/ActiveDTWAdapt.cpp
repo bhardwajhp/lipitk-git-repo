@@ -296,7 +296,7 @@ int LTKAdapt::readAdaptConfig()
 	
 	//Don't throw Error as ShapeRecognizer might not support ADAPT
 	string tempStringVar = "";
-	int tempIntegerVar;
+	//int tempIntegerVar;
 	
 	int errorCode = adaptConfigReader->getConfigValue(MAXCLUSTERSIZE,tempStringVar);
 	
@@ -304,7 +304,7 @@ int LTKAdapt::readAdaptConfig()
 	{
 		if(LTKStringUtil::isInteger(tempStringVar))
 		{
-			tempIntegerVar = atoi((tempStringVar).c_str());
+			int tempIntegerVar = atoi((tempStringVar).c_str());
 			
 			if(tempIntegerVar > 1)
 			{

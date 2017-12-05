@@ -609,7 +609,7 @@ int LTKPreprocessor::resampleTrace(const LTKTrace& inTrace, int resamplePoints, 
 
 	float unitLength = 0;					//	estimated length of each segment after resampling
 
-	float pointDistance;
+	//float pointDistance;
 
 	float balanceDistance = 0;				//	distance between the last resampled point and
 											//	the next raw sample point
@@ -752,7 +752,7 @@ int LTKPreprocessor::resampleTrace(const LTKTrace& inTrace, int resamplePoints, 
 
 			yDiff = yVec.at(pointIndex) - yVec.at(pointIndex+1);
 
-			pointDistance = (float) (sqrt(xDiff*xDiff + yDiff*yDiff)); //distance between 2 points.
+			float pointDistance = (float) (sqrt(xDiff*xDiff + yDiff*yDiff)); //distance between 2 points.
 
 			unitLength += pointDistance; // finding the length of trace.
 
@@ -2322,7 +2322,7 @@ int LTKPreprocessor::computeTraceLength(const LTKTrace& trace, int fromPoint, in
 
 	float xDiff, yDiff;
 
-	float pointDistance;
+	// float pointDistance;
 
 	outLength = 0;
 
@@ -2351,7 +2351,7 @@ int LTKPreprocessor::computeTraceLength(const LTKTrace& trace, int fromPoint, in
 
 		yDiff = yVec[pointIndex] - yVec[pointIndex+1];
 
-		pointDistance = (float) (sqrt(xDiff*xDiff + yDiff*yDiff)); //distance between 2 points.
+		float pointDistance = (float) (sqrt(xDiff*xDiff + yDiff*yDiff)); //distance between 2 points.
 
 		outLength += pointDistance; // finding the length of trace.
 

@@ -215,7 +215,7 @@ int LTKCheckSumGenerate::addHeaderInfo(const string& modelDataHeaderInfoFilePath
 	LOG( LTKLogger::LTK_LOGLEVEL_DEBUG) << 
 		 " Entering: LTKCheckSumGenerate::addHeaderInfo()" << endl;
 
-	int nCRC;								//	Holds checks sum in decimal format
+	//int nCRC;								//	Holds checks sum in decimal format
 
 	//long testEndian = 1;
 
@@ -291,7 +291,7 @@ int LTKCheckSumGenerate::addHeaderInfo(const string& modelDataHeaderInfoFilePath
 	string szBuf(modelFileData);   
 
 	//Caluculate Checksum for the Modiel File Data.
-	nCRC = getCRC(szBuf);
+	int nCRC = getCRC(szBuf);
 
 	//Convert the check sum into Hexadecimal Value.
 	sprintf(chSum, "%x", nCRC);
@@ -471,7 +471,7 @@ int LTKCheckSumGenerate::readMDTHeader(const string &mdtFilePath,
 	LOG( LTKLogger::LTK_LOGLEVEL_DEBUG) << 
 		 " Entering: LTKCheckSumGenerate::readMDTHeader()" << endl;
 
-	int headerLen, nCRC;
+	int headerLen; //, nCRC;
 	
 	long dSize, actDataSize;
 	
@@ -559,7 +559,7 @@ int LTKCheckSumGenerate::readMDTHeader(const string &mdtFilePath,
 	string szBuf(sbuf);
 
 	//Caluculate Checksum for the Model File Data.
-	nCRC = getCRC(szBuf);
+	int nCRC = getCRC(szBuf);
 	sprintf(chSum, "%x", nCRC);
 
 	delete [] sbuf;

@@ -316,7 +316,7 @@ int NeuralNetShapeRecognizer::readClassifierConfig()
         "NeuralNetShapeRecognizer::readClassifierConfig()" << endl;
 
     string tempStringVar = "";
-    int tempIntegerVar = 0;
+    //int tempIntegerVar = 0;
     float tempFloatVar = 0.0;
     LTKConfigFileReader *shapeRecognizerProperties = NULL;
     int errorCode = FAILURE;
@@ -3045,15 +3045,13 @@ int NeuralNetShapeRecognizer::prepareNeuralNetTrainingSequence()
 
 	int index = 0;
 
-	// store the shape ID which contain the maximum traning sample
-	int patternId = -1;
-
-	int max = -1;
-
 	bool isPrepareTraningSet = false;
 
 	try{
 
+		// store the shape ID which contain the maximum traning sample
+                int patternId = -1;
+		int max = -1;		
 		//if traning set contain unequal number of sample,
 		// then it make the equal number of sample for the traning set
 		for(index = 0; index < m_sampleCountVec.size(); ++index)
@@ -4417,13 +4415,13 @@ int NeuralNetShapeRecognizer::adjustWeightByErrorBackpropagation(double2DVector&
 
 	int sampleIndex;
 
-    int nsold = 0;
+    	//int nsold = 0;
 
-    int itaretorIndex = 0; // itaretorIndex
+    	int itaretorIndex = 0; // itaretorIndex
 
 	double actualOutput;
 
-	double currentError;
+	//double currentError;
 
 	ep = doubleVector( totalNumberOfSample ); //errror per sample // individual error
 
@@ -4437,7 +4435,7 @@ int NeuralNetShapeRecognizer::adjustWeightByErrorBackpropagation(double2DVector&
 
 	do
 	{
-        currentError = 0.0;
+        double currentError = 0.0;
         //for each pattern
         for(sampleIndex = 0; sampleIndex < totalNumberOfSample; sampleIndex++)
 		{

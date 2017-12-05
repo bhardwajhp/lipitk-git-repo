@@ -1676,7 +1676,7 @@ int evaluateAdapt(LTKShapeRecognizer **addReco, string projectName)
 		(*addReco)->setDeviceContext(captureDevice);
 
 		
-		int sampleCount = 1;
+		//int sampleCount = 1;
 	
 		while(!adaptFileHandle.eof())
 		{		
@@ -1695,7 +1695,7 @@ int evaluateAdapt(LTKShapeRecognizer **addReco, string projectName)
 			{
 				/* Print the line to be parsed	*/
 				cout << line <<" "<<endl;	
-				sampleCount++;
+				//nsampleCount++;
 
 				//Tokenize the string
 				errorCode = LTKStringUtil::tokenizeString(line,  LIST_FILE_DELIMITER,  tokens);

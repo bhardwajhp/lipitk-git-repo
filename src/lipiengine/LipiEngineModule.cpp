@@ -222,7 +222,7 @@ int LTKLipiEngineModule::createShapeRecognizer(const string& strProjName,
 		"Entering: LTKLipiEngineModule::createShapeRecognizer()"<<endl;
 	
 	int errorCode;
-    int iResult = 0;
+    //int iResult = 0;
 	void *dllHandler = NULL;
 	string recognizerName = "";
 	string strProjectName = strProjName;
@@ -380,7 +380,7 @@ int LTKLipiEngineModule::createWordRecognizer(const string& strProjName,
 		"Entering: LTKLipiEngineModule::createWordRecognizer()"<<endl;
 
 	string recognizerName = "";
-	int iResult = 0;
+	//int iResult = 0;
 	void *dllHandler = NULL;
 	string strProjectName = strProjName;
     string strProfileName = strProfName;

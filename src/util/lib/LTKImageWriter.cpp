@@ -452,7 +452,7 @@ m_offset(0)
 	void LTKImageWriter::drawRawInkFileToImage(const string fileName, const string imgFileName,
 														int imgWidth,int imgHeight)
 	{
-		int errorCode;
+		//int errorCode;
 		LOG( LTKLogger::LTK_LOGLEVEL_DEBUG) << 
 		  " Entering: LTKImageWriter::drawRawInkFileToImage(const string, const string,int,int)" << endl;
 
@@ -470,7 +470,7 @@ m_offset(0)
                   <<"Error : "<< EINK_FILE_OPEN <<":"<< getErrorMessage(EINK_FILE_OPEN)
                   <<"LTKImageWriter::drawRawInkFileToImage(const string, const string,int,int)" <<endl;
 
-		errorCode = EINK_FILE_OPEN;
+		//errorCode = EINK_FILE_OPEN;
 		}
 
 		drawLTKTraceGroupToImage(traceGroup,imgFileName,imgWidth,imgHeight);
@@ -1096,7 +1096,7 @@ m_offset(0)
 			findMinXOfTrace(trace,minOfTrace);
 
 			LTKTrace offsetTrace=trace;
-			int pointToShift=0;
+			//int pointToShift=0;
 			vector<float> newXChannel;
 			for(int j=0;j<trace.getNumberOfPoints();j++){
 				vector<float> point;
