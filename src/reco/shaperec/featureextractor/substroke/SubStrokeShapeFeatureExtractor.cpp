@@ -985,7 +985,7 @@ int SubStrokeShapeFeatureExtractor::getSlopeFromTrace(const LTKTrace& inTrace, v
 
 	int pointIndex = 0;
 	
-	float dx = 0.0, dy = 0.0;	//Variables to store differences in x and y-directions to compute slope
+	//float dx = 0.0, dy = 0.0;	//Variables to store differences in x and y-directions to compute slope
 
 	float slope = 0.0;
 
@@ -1013,9 +1013,9 @@ int SubStrokeShapeFeatureExtractor::getSlopeFromTrace(const LTKTrace& inTrace, v
 
 	for(pointIndex=0; pointIndex < dimension-1; ++pointIndex)
 	{
-		dx = xVec[pointIndex+1] - xVec[pointIndex];
+		float dx = xVec[pointIndex+1] - xVec[pointIndex];
 
-		dy = yVec[pointIndex+1] - yVec[pointIndex];
+		float dy = yVec[pointIndex+1] - yVec[pointIndex];
 
 		if( (errorCode = computeSlope(dx, dy, slope)) != SUCCESS)
 		{

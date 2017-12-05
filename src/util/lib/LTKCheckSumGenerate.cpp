@@ -217,7 +217,7 @@ int LTKCheckSumGenerate::addHeaderInfo(const string& modelDataHeaderInfoFilePath
 
 	int nCRC;								//	Holds checks sum in decimal format
 
-	long testEndian = 1;
+	//long testEndian = 1;
 
 	char *modelFileData = NULL;		//	Model File header Data.
 

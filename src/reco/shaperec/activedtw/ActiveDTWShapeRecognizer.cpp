@@ -4393,7 +4393,7 @@ meanFeature doubleVector mean of feature matrix
 	 
 	 
 	 doubleVector tempVector;
-	 double mean;
+	 //double mean;
 	 
 	 int numberOfRows;
 	 int numberOfColumns;
@@ -4409,7 +4409,7 @@ meanFeature doubleVector mean of feature matrix
 	 /***********CALCULATING MEAN*********/
 	 for(i = 0; i < numberOfColumns;i++)
 	 {
-		 mean = 0.0;
+		 double mean = 0.0;
 		 for(j = 0;j < numberOfRows;j++)
 		 {
 			 mean = mean +  featureMatrix[j][i];

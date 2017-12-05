@@ -468,7 +468,7 @@ int BoxedFieldRecognizer::recognize (LTKRecognitionContext& rc)
 
 	vector<unsigned short> resultString; //result
 
-	float normConf; //normalized confidence
+	//float normConf; //normalized confidence
 
 	//Returning FAILURE if the recognition context
 	//is not segmented into characters
@@ -527,7 +527,7 @@ int BoxedFieldRecognizer::recognize (LTKRecognitionContext& rc)
 
 	for(resultIter = m_decodedResults.begin(); resultIter != resultEnd ; ++resultIter)
 	{
-		normConf = (*resultIter).getResultConfidence();
+		float normConf = (*resultIter).getResultConfidence();
 
 		normConf /= ((*resultIter).getResultWord()).size();
 
@@ -941,9 +941,9 @@ int BoxedFieldRecognizer::updateRecognitionResults(const vector<LTKShapeRecoResu
 	                   //Iterator for accessing elements of the map
 	pair<int,int> combination;
 	                   //Temporary variable that keeps a (int,int) pair
-	int wordResultIndex, shapeResultIndex;
+	int wordResultIndex;
 	                   //loop index variables
-	float wordConfidence, shapeConfidence;
+	//float wordConfidence, shapeConfidence;
 	                   //word level and shape level confidences
 	unsigned short newSymbol;
 	                   //temporary storage for shape recognizer id
@@ -988,17 +988,18 @@ int BoxedFieldRecognizer::updateRecognitionResults(const vector<LTKShapeRecoResu
 		//initializing a temporary result vector
 		//newResultVector.assign(smallerResultNumber,LTKWordRecoResult());
 
+		float wordConfidence;	
 		//iterating through each word recognition result
 		for(wordResultIndex=0; wordResultIndex<m_decodedResults.size(); ++wordResultIndex)
 		{
 			wordConfidence = (m_decodedResults.at(wordResultIndex)).getResultConfidence();
 
 			//iterating through each shape recognition results
-			for(shapeResultIndex =0; shapeResultIndex<numShapeRecoResults; ++shapeResultIndex )
+			for(int shapeResultIndex =0; shapeResultIndex<numShapeRecoResults; ++shapeResultIndex )
 			{
 				//adding total confidence to the map. so that later they
 				//can be retrieved in the sorted order
-				shapeConfidence = (results.at(shapeResultIndex)).getConfidence();
+				float shapeConfidence = (results.at(shapeResultIndex)).getConfidence();
 				backTrace.insert( pair<float, pair<int,int> >( (shapeConfidence+wordConfidence),
 					pair<int,int>(wordResultIndex,shapeResultIndex)));
 			}

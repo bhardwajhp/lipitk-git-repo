@@ -585,7 +585,7 @@ int LTKRecognitionContext::getLanguageModel (const string& key,
 int  LTKRecognitionContext::getNextBestResults (int numResults, 
 													LTKWordRecoResultVector& outWordRecResults)
 {
-	int lastIndex = 0;//Last  index
+	//int lastIndex = 0;//Last  index
 
 	LOG( LTKLogger::LTK_LOGLEVEL_DEBUG) << 
         " Entering: LTKRecognitionContext::getNextBestResults()" << endl;

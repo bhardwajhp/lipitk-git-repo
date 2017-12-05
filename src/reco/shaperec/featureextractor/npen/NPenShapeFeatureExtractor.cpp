@@ -680,18 +680,14 @@ int NPenShapeFeatureExtractor::computeLinearityAndSlope(const vector<vector<floa
 			slope = cos(atan((y2-y1)/(x2-x1)));
 		}
 
-
-		float x0 = 0.0f;
-		float y0 = 0.0f;
-
-		float distance = 0.0f;
-		
-
 		linearity = 0.0f;
 
 		for(int v=1; v<(vicinity.size()-1); ++v)
 		{
-
+			float x0 = 0.0f;
+                        float y0 = 0.0f;
+                        float distance = 0.0f;
+			
 			if(vicinity[v].size() < 2)
 			{
 				LOG(LTKLogger::LTK_LOGLEVEL_ERR)
