@@ -11,7 +11,7 @@ LIPITK_LIB="libcommon.a libshaperecommon.a libwordreccommon.a libfeatureextracto
 SYS_EXE=/usr/bin/g++
 
 # java-6-openjdk
-JAVA_DIR=/usr/lib/jvm/java-6-openjdk
+JAVA_DIR=/usr/lib/jvm/java-8-openjdk-amd64
 JAR_FILE=lipiDesigner.jar
 
 # perl module (Zip)
@@ -24,7 +24,7 @@ flag=0
 lflag=0
 
 # lipitk directory
-LIPITK_DESIGNER=`pwd`
+LIPITK_DESIGNER=$(pwd)
 DESIGNER_PATH=/lipiDesigner
 LIPITK_DIR=${LIPITK_DESIGNER%$DESIGNER_PATH}
 
@@ -148,7 +148,7 @@ if [ "$build" = yes ]; then
 		exit 1
 	fi
 
-	find /usr/share/perl -print | grep Archive | grep -w $ZIP 1>/dev/null 2>&1
+	find /usr/bin/perl -print | grep Archive | grep -w $ZIP 1>/dev/null 2>&1
 	if [ $? -ne 0 ]
 	then
 		echo "\nWARNING: Archive::Zip perl module under /usr/share/perl not installed. The package functionality in lipiDesigner may not work."
