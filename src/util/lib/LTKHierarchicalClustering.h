@@ -1418,11 +1418,10 @@ float computeAvgSil(int clust1Index,int clust2Index) const
 
           for(int r=0;r<m_intermediateCG.size();r++)
           {
-               float avgInterDist=0.0;
-
                if(r!=clust1Index)
                {
-                    for(int c=0;c<m_intermediateCG[r].size();c++)
+                    float avgInterDist=0.0; 
+		    for(int c=0;c<m_intermediateCG[r].size();c++)
                     {
                          avgInterDist+=getInterObjectDistance(dataObj,m_intermediateCG[r][c]);
                     }

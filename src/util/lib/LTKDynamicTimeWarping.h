@@ -81,8 +81,8 @@ class DynamicTimeWarping
             int yIndex = lastPointYIndex;
             int xIndex = lastPointXIndex;
             vector<int > indices(2);
-            int tb;					// req for warping path
-            int k,p;				// loop variables
+            //int tb;					// req for warping path
+            //int k,p;				// loop variables
 
             //Path Computation
 
@@ -92,7 +92,7 @@ class DynamicTimeWarping
 
             while((yIndex > 0) && (xIndex > 0))
             {
-                tb = m_phi[yIndex][xIndex];
+                int tb = m_phi[yIndex][xIndex];     //req for warping path;
                 if (tb == 2)
                 {
                     yIndex--; 
@@ -120,7 +120,7 @@ class DynamicTimeWarping
             if((yIndex > 0) && (xIndex == 0))
             {
                 --yIndex;
-                for(k = yIndex; k >= 0; --k)
+                for(int k = yIndex; k >= 0; --k)
                 { 
                     indices[0]  = (k);
                     indices[1] = (0);
@@ -130,7 +130,7 @@ class DynamicTimeWarping
             else if(( yIndex == 0) && (xIndex > 0))
             {
                 --xIndex;
-                for(p = xIndex; p >= 0; --p)
+                for(int p = xIndex; p >= 0; --p)
                 { 
                     indices[0]  = (0);
                     indices[1] = (p);
