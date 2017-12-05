@@ -87,32 +87,32 @@ public class ClassSamples extends JPanel
 			JButton jremovesample = new JButton("Delete Sample");
 			//Added code to fix the button size
 			jremovesample.setSize(20, 20);
-			jremovesample.setPreferredSize(new java.awt.Dimension(110, 20));
+			jremovesample.setPreferredSize(new Dimension(110, 20));
 			if(operatingSystem.startsWith("windows"))
 			{
-				jremovesample.setMaximumSize(new java.awt.Dimension(110, 20));
+				jremovesample.setMaximumSize(new Dimension(110, 20));
 			}
 			else
 			{
-				jremovesample.setMaximumSize(new java.awt.Dimension(123, 20));
+				jremovesample.setMaximumSize(new Dimension(123, 20));
 			}
-			jremovesample.setMinimumSize(new java.awt.Dimension(110, 20));
+			jremovesample.setMinimumSize(new Dimension(110, 20));
 			jremovesample.setAlignmentX(Component.CENTER_ALIGNMENT);
 			jremovesample.setHorizontalAlignment(SwingConstants.LEFT);
 
 			JButton jremoveclass = new JButton("Delete Class");
 			//Added code to fix the button size
 			jremoveclass.setSize(20, 20);
-			jremoveclass.setPreferredSize(new java.awt.Dimension(110, 20));
+			jremoveclass.setPreferredSize(new Dimension(110, 20));
 			if(operatingSystem.startsWith("windows"))
 			{
-				jremoveclass.setMaximumSize(new java.awt.Dimension(110, 20));
+				jremoveclass.setMaximumSize(new Dimension(110, 20));
 			}
 			else
 			{
-				jremoveclass.setMaximumSize(new java.awt.Dimension(123, 20));
+				jremoveclass.setMaximumSize(new Dimension(123, 20));
 			}
-			jremoveclass.setMinimumSize(new java.awt.Dimension(110, 20));
+			jremoveclass.setMinimumSize(new Dimension(110, 20));
 			jremoveclass.setAlignmentX(Component.CENTER_ALIGNMENT);
 			jremoveclass.setHorizontalAlignment(SwingConstants.LEFT);
 
